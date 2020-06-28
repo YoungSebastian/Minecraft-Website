@@ -1,0 +1,90 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Sebastian Ozimkowski">
+    <meta name="keywords"
+        content="minecraft, server, serverminecraft, mcutopia, najlepszy server, survival, szybkie pytanie natury egzystencjalnej Dokąd zmierza ten server?, mcutopia.fun, mcutopia.csrv.pl">
+    <meta name="description"
+        content='Server community "Szybkie pytanie natury egzystencjalnej, Dokąd zmierza ten server?"'>
+
+    <title>McUtopia.fun - Najlepszy server minecraft</title>
+
+    <link rel="icon" type="image/png" href="{% static '/img/favicon.ico' %}" />
+
+    <!-- STYLE -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
+    <link rel="stylesheet" href="{% static 'css/style.css'%}">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <!-- JS -->
+    <script src="https://kit.fontawesome.com/" crossorigin="anonymous"></script>
+
+    {% block 'head' %}
+    {% endblock%}
+
+</head>
+
+<body>
+    <div class="notloaded"></div>
+    <nav class="mobile_navigation">
+        <div class="hero is-fullheight">
+            <div class="hero-body ">
+                <div class="container is-centered is-horizontal-center">
+                    <a href="{% url 'home' %}" class="navbar-item">Strona Główna</a>
+                    <a href="{% url 'shop:home' %}" class="navbar-item">Sklep</a>
+                    <a href="{% url 'contact' %}" class="navbar-item">Kontakt</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <section class="hero is-fullheight">
+        <div class="hero-head">
+            <nav class="navbar">
+                <div class="container">
+                    <div class="navbar-brand is-large">
+                        <div class="flex-row">
+                            <a href="{% url 'home' %}">
+                                <img class="image is-48x48" src="{% static 'img/logo.jpg'%}" alt="Logo">
+                            </a>       
+                            <h1 class="is-large ml-4 is-size-4"><a href="{% url 'home' %}">McUtopia.fun</a></h1>                                        
+                        </div>
+
+                        <a class="navbar-burger burger" onclick="menu()" data-target="navbarMenuHeroA">
+                            <span aria-hidden="true"></span>
+                            <span aria-hidden="true"></span>
+                            <span aria-hidden="true"></span>
+                        </a>
+                    </div>
+                    <div class="navbar-menu">
+                        <div class="navbar-end">
+                            <a href="{% url 'home' %}" class="navbar-item underline">Strona Główna</a>
+                            <a href="{% url 'shop:home' %}" class="navbar-item underline">Sklep</a>
+                            <a href="{% url 'contact' %}" class="navbar-item underline">Kontakt</a>
+                            <span class="navbar-item">
+                                <a href="https://discord.gg/" class="button is-info" onclick="menu()">
+                                    <span class="icon">
+                                        <i class="fab fa-discord"></i>
+                                    </span>
+                                    <span>Discord</span>
+                                </a>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+
+        <div class="hero-body">
+            {% block content %}
+            {% endblock %}
+        </div>
+    </section>
+    <script src="https://skrypt-cookies.pl/id/5272f46bd393f458.js"></script>
+    <script src="{% static 'js/app.js' %}"></script>
+</body>
+
+</html>

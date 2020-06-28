@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block 'head' %}
+    <link rel="stylesheet" href="{% static 'css/contact.css' %}"> 
+{% endblock %}
+
+{% block content %}
+<div class="container columns is-gapless">
+    <div class="column contact">
+        <h2 class="title pt-5 pb-5">Formularz kontaktowy</h2>
+        <p class="subtitle">Wyślij nam wiadomość, <strong><a href="mailto:sebastianfejsbuk@gmail.com">tutaj</a></strong> lub bezpośrednio poniżej</p>
+        <form method="POST" >{% csrf_token %}
+            <label class="label pt-1">Twoje piękne imię :)</label>
+            <input class="input" name="name" type="text" placeholder="np. Adolf">
+            <label class="label pt-1">Twój email</label>
+            <input class="input" name="email" type="email" placeholder="np. severussnape@hogwart.com">
+            <label class="label pt-1">Temat</label>
+            <div class="control">
+                <div class="select">
+                <select name="topic">
+                    <option value="payment">Płatność</option>
+                    <option value="server">Usprawnienie servera.</option>
+                    <option value="rofl">Admin daj moda.</option>
+                    <option value="other">Inne.</option>
+                </select>
+                </div>
+            </div>
+            <label class="label pt-1">Treść wiadmości</label>
+            <textarea name="message" class="textarea has-fixed-size pb-3" placeholder="Admin daj moda."></textarea>
+            {{captcha}}
+            <div class="pt-3 pb-3 ">
+                <button class="button is-link ">Wyślij</button>
+            </div>
+        </form>
+    </div>
+    <figure class="column  is-three-fifths is-gapless">
+        <img class="image is-vcentered" src="{% static '/img/1.jpg'%}" alt="zdjęcie z spawna gry">
+    </figure>
+</div>
+{% endblock %}

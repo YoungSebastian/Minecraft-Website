@@ -1,0 +1,75 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block 'head' %}
+<link rel="stylesheet" href="{% static 'css/extensions/bulma-pricingtable.min.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="section are-large">
+        <h2 class="title">Utopijny sklep.</h2>
+        <p class="subtitle">Wybierz usługę i przejdź do płatności </p>
+        
+        <div class="pricing-table is-horizontal">
+            <div class="pricing-plan">
+              <div class="plan-header">VIP</div>
+              
+              <div class="plan-items">
+                <div class="plan-item">Ranga na Discordzie</div>
+                <div class="plan-item">Możliwość pisania kolorem</div>
+                <div class="plan-item">5Diaxów codziennie</div>
+                <div class="plan-item">Fly</div>
+                <div class="plan-item">-</div>
+                <div class="plan-item">-</div>
+              </div>
+              <div class="plan-footer">
+                    <div class="plan-price"><span class="plan-price-amount has-text-primary-dark"><span class="plan-price-currency">Zł</span>15</span>/Miesiąc</div>
+                    <a href="{% url 'shop:payment' 'vip' %}">
+                        <button class="button is-fullwidth has-background-primary-dark has-text-white-bis" onclick="payment()">Dalej</button>
+                    </a>
+                </div>
+            </div>
+          
+            <div class="pricing-plan">
+                <div class="plan-header">Sponsor</div>
+                
+                <div class="plan-items">
+                  <div class="plan-item">Ranga na Discordzie</div>
+                  <div class="plan-item">Możliwość pisania kolorem</div>
+                  <div class="plan-item">5Diaxów codziennie</div>
+                  <div class="plan-item">Fly</div>
+                  <div class="plan-item">Big dick</div>
+                  <div class="plan-item">-</div>
+                </div>
+                <div class="plan-footer">
+                    <div class="plan-price"><span class="plan-price-amount has-text-link-dark"><span class="plan-price-currency">Zł</span>30</span>/Miesiąc</div>
+                    <a href="{% url 'shop:payment' 'sponsor' %}">
+                        <button class="button is-fullwidth has-background-link-dark has-text-white-bis">Dalej</button>
+                    </a>
+                </div>
+              </div>
+          
+            <div class="pricing-plan">
+              <div class="plan-header">Kozak Totalny</div>
+              <div class="plan-items">
+                <div class="plan-item">Ranga na Discordzie</div>
+                <div class="plan-item">Możliwość pisania kolorem</div>
+                <div class="plan-item">5Diaxów codziennie</div>
+                <div class="plan-item">Fly</div>
+                <div class="plan-item">Big dick</div>
+                <div class="plan-item">-</div>
+              </div>
+              <div class="plan-footer">
+                <div class="plan-price"><span class="plan-price-amount has-text-danger-dark"><span class="plan-price-currency">Zł</span>100</span>/Miesiąc</div>
+                <a href="{% url 'shop:payment' 'kozak' %}">
+                    <button class="button is-fullwidth has-background-danger-dark has-text-white-bis">Dalej</button>
+                </a>
+              </div>
+            </div>
+          </div>
+
+    </div>
+</div>
+
+{% endblock %}

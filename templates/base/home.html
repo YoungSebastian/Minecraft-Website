@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block 'head' %}
+    <link rel="stylesheet" href="{% static 'css/home.css' %}"> 
+{% endblock %}
+
+{% load static %}
+{% block content %}
+<div class="container columns is-gapless">
+  <div class="column">
+    <h2 class="title pt-5 pb-5">Witaj na McUtopia.fun</h2>
+    <p class="subtitle is-5 mb-2">Szybkie pytanie natury egzystencjalnej<br>Dokąd zmierza ten server?</p>
+    <div class="data">
+      <a class="ip" onclick="fallbackCopyTextToClipboard('mcutopia.csrv.pl')">
+        <p class="subtitle is-medium has-text-success-dark mb-1">IP - mcutopia.csrv.pl</p>
+        <span class="tag is-warning is-light">
+          <- Kopiuj! </span>
+      </a>
+      <a href="https://discord.gg/ZDtKd7C" class="subtitle is-6 has-text-link-dark">DC
+        - https://discord.gg/</a>
+    </div>
+    <h3 class="title pt-5 pb-5">Znajdź nas na <a href="https://www.facebook.com/groups/985996681745216"
+        target="_blank" rel="noopener"><strong>Facebooku!</strong></a></h3>
+  </div>
+  <div class="column is-three-fifths">
+    <img src="{% static '/img/1.jpg'%}" alt="zdjęcie z spawna gry">
+  </div>
+</div>
+{% endblock %}

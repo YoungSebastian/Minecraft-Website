@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container columns is-gapless">
+    <div class="column contact">
+        <h2 class="title pt-5">Zamówienie w realizacji</h2>
+        <p class="subtitle">Dziękujemy ,że nas wspierasz!</p>
+        <p class="subtitle">
+        Dziękujemy ,że nas wspierasz!<br>
+        Wyślij zamówienie z tytułem: "{{payment_number}}"<br>
+        Zamówienie zrealizujemy w ciągu 24 godzin.
+        </p>
+    </div>
+    <figure class="column  is-three-fifths is-gapless">
+        <img class="image is-vcentered" src="{% static '/img/1.jpg'%}" alt="zdjęcie z spawna gry">
+    </figure>
+</div>
+{% endblock %}
